@@ -14,7 +14,7 @@ Aplicación web y API REST que convierte enlaces largos en códigos cortos y red
 
 ## Tecnologías
 
-- Java 17, Spring Boot 4.1.1
+- Java 21, Spring Boot 4.1.1
 - Spring Data JPA y MySQL
 - Thymeleaf, HTML y CSS
 - Maven
@@ -39,7 +39,7 @@ las interfaces (puertos) y la capa de persistencia las implementa.
 
 ## Requisitos
 
-- JDK 17
+- JDK 21
 - MySQL en ejecución (puerto 3306)
 
 ## Cómo ejecutarlo
