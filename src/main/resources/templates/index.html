@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Acortador de URLs</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>Acortador de URLs</h1>
+      <p class="subtitle">Pega un enlace largo y obtén uno corto.</p>
+
+      <form th:action="@{/shorten}" th:object="${urlRequest}" method="post">
+        <input
+          type="text"
+          th:field="*{originalUrl}"
+          placeholder="https://ejemplo.com/una-url-muy-larga"
+        />
+        <button type="submit">Acortar</button>
+        <p
+          class="error"
+          th:if="${#fields.hasErrors('originalUrl')}"
+          th:errors="*{originalUrl}"
+        ></p>
+      </form>
+
+      <div class="result" th:if="${shortUrl}">
+        <p>Tu URL corta:</p>
+        <a th:href="${shortUrl}" th:text="${shortUrl}" target="_blank"></a>
+      </div>
+    </main>
+  </body>
+</html>
